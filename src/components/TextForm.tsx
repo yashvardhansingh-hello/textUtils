@@ -14,6 +14,9 @@ export default function TextForm(props: {heading: any}) {
   }
   const [text, setText] = useState("");
   let words = text.split(" ").length;
+  if(text.split(" ")[0]===''){
+    words= 0;
+  }
   return (
     <>
     <div className='container'>
