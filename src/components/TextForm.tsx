@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-export default function TextForm(props: { heading: any }) {
+
+export default function TextForm(props: {
+	heading: any;
+	mode: string;
+	toggleMode: any;
+}) {
 	const handleUpClick = () => {
 		setText(text.toUpperCase());
 	};
@@ -14,7 +19,12 @@ export default function TextForm(props: { heading: any }) {
 		setText("");
 	};
 	const handleCopy = () => {
+		// let text = document.getElementById("myBox");
 		navigator.clipboard.writeText(text);
+	};
+	const handleSpaces = () => {
+		let newText = text.split(/[ ]+/).join(" ");
+		setText(newText);
 	};
 	const [text, setText] = useState("");
 	let words = text.split(" ").length;
@@ -23,9 +33,9 @@ export default function TextForm(props: { heading: any }) {
 	}
 	return (
 		<>
-			<div className="container">
+			<div className="container m-0 p-0">
 				<h1>{props.heading}</h1>
-				<div className="mb-3">
+				<div className="mb-1">
 					<textarea
 						className="form-control"
 						value={text}
@@ -43,16 +53,26 @@ export default function TextForm(props: { heading: any }) {
 				<button className="btn btn-danger mx-1" onClick={handleDelete}>
 					Delete
 				</button>
+				<button className="btn btn-success mx-1" onClick={handleCopy}>
+					Copy
+				</button>
+				<button className="btn btn-danger mx-1" onClick={handleSpaces}>
+					Remove Extra Spaces
+				</button>
 			</div>
-			<div className="container my-3">
-				<h1>Your Text Summary</h1>
+			<div className="container my-1">
+				<h1>Text Summary</h1>
 				<p>
 					{words} Words {text.split("").length} characters
 				</p>
-				<p className="my-4">
+				<p className="my-1">
 					Reading Time: {words * 0.008}{" "}
-					<span className="text-danger">minutes</span>
+					<span className="text-danger" style={{ padding: 0, margin: 0 }}>
+						minutes
+					</span>
 				</p>
+				<h2>Preview</h2>
+				<p>{text !== "" ? text : "Nothing to show. Enter Text"}</p>
 			</div>
 		</>
 	);
