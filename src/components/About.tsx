@@ -1,4 +1,7 @@
-export default function About(props: { mode: string; toggleMode: any }) {
+export default function About(props) {
+	{
+		document.title = "TextUtils: About";
+	}
 	return (
 		<div className="container" data-bs-theme={props.mode}>
 			<h2 className="my-3">About Us</h2>

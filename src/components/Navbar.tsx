@@ -1,13 +1,6 @@
-import { Outlet } from "react-router-dom";
-
-export default function Navbar(props: {
-	title: string;
-	aboutText: string;
-	mode: string;
-	toggleMode: any;
-}) {
+export default function Navbar(props) {
 	return (
-		<nav className={`navbar`} data-bs-theme={props.mode}>
+		<nav className={`navbar pb-0`} data-bs-theme={props.mode}>
 			<div
 				className="container-fluid pb-2"
 				style={
@@ -93,7 +86,6 @@ export default function Navbar(props: {
 					</div>
 				</div>
 			</div>
-			<Outlet />
 		</nav>
 	);
 }
