@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
+import { Routes, Route, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-import { Routes, Route, Outlet } from "react-router-dom";
 import DefaultPage from "./pages/DefaultPage";
 import Alert from "./components/Alert";
 

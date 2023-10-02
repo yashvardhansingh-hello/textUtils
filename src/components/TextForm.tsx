@@ -100,6 +100,27 @@ export default function TextForm(props) {
 				<h2>Preview</h2>
 				<p>{text !== "" ? text : "Nothing to show. Enter Text"}</p>
 			</div>
+			<div
+				className="card"
+				data-bs-theme={props.mode}
+				style={{ width: "18rem" }}
+			>
+				<img
+					src="https://imgs.search.brave.com/HJ7mMmRgakDaN_wuCHx99ZZs5nEbsA0-ttI_mlgzolQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2I2L1BlbmNpbF9k/cmF3aW5nX29mX2Ff/Z2lybF9pbl9lY3N0/YXN5LmpwZw"
+					className="card-img-top"
+					alt="Nothing"
+				/>
+				<div className="card-body">
+					<h5 className="card-title">Card title</h5>
+					<p className="card-text">
+						Some quick example text to build on the card title and make up the
+						bulk of the card's content.
+					</p>
+					<a href="./about" className="btn btn-primary">
+						Go somewhere
+					</a>
+				</div>
+			</div>
 		</>
 	);
 }
