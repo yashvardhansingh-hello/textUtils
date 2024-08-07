@@ -54,7 +54,7 @@ function App() {
 					element={
 						<div className="container my-3">
 							<TextForm
-								heading="Essay"
+								heading="Text"
 								mode={mode}
 								toggleMode={toggleMode}
 								showAlert={showAlert}
